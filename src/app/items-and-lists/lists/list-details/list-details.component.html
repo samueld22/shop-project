@@ -1,0 +1,55 @@
+<div *ngIf="selectedList">
+  <div class="row">
+    <div class="col-xs-12" *ngIf=!renameMode>
+      <div class="col-xs-8">
+          <h1>{{selectedList.name}}</h1>
+      </div>
+      <div class="pull-right">
+        <button 
+          type="button"
+          class="btn btn-primary"
+          (click)="onStartRename()">
+          Rename
+        </button>
+      </div>
+    </div>
+    <form 
+      #renameForm="ngForm" 
+      (ngSubmit)="onSubmitRename(renameForm)"
+      *ngIf="renameMode">
+      <div class="pull-left">
+        <label for="name">Name</label>
+          <input 
+            type="text"
+            id="name"
+            class="form-control"
+            ngModel
+            name="name"
+            required
+          >
+      </div>
+      <div class="pull-right">
+        <button 
+          class="btn btn-primary" 
+          type="submit" 
+          [disabled]="!renameForm.valid">
+            Done
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      {{selectedList.createdAt}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button 
+        type="button"
+        class="btn btn-primary">
+        Add Items
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<a 
+  style="cursor: pointer;"
+  class="list-group-item clearfix" 
+  (click)="onSelect()"
+  [ngClass]="isSelected==true?'active':''"
+  >
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{item.name}}</h4>
+      <p class="list-group-item-text">{{item.price}}</p>
+    </div>
+    <div class="pull-right">
+      <h3 class="list-group-item-heading">{{item.catagory}}</h3>
+
+    </div>
+</a>

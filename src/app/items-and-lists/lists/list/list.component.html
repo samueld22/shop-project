@@ -1,0 +1,25 @@
+<a 
+class="list-group-item clearfix"
+routerLinkActive="active"
+  >
+  <div class="col-xs-8"
+    >
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{id}}</h4>
+    </div>
+  </div>
+  <div class="pull-right" [routerLink]="[index]">  
+    <button 
+      class="btn btn-primary" 
+      (click)="onSelect()" 
+      *ngIf="!isSelected"
+      >Select
+    </button>
+    <button 
+      class="btn btn-danger" 
+      (click)="onDelete()"
+      *ngIf="isSelected"
+      >Delete
+    </button>
+  </div>  
+</a>

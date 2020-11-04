@@ -1,0 +1,23 @@
+<div *ngIf=!isAuthenticated>
+  <button class="btn btn-primary"
+    routerLink="/auth"
+  >Login/Signup
+  </button>
+</div>
+<div *ngIf=isAuthenticated>
+  <button class="btn btn-primary">
+    Add Shopping List
+  </button>
+  <br>
+  <app-list 
+    *ngFor = "let obj of namesAndIds;let i = index"
+    [id]="obj.id"
+    [name]="obj.name"
+    [index]="i"
+    >
+  </app-list>
+  <div class="col-md-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
